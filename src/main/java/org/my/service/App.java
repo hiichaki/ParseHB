@@ -1,19 +1,18 @@
-package main;
+package org.my.service;
 
 import java.util.ArrayList;
 
-import com.gargoylesoftware.htmlunit.html.HtmlPage;
+import org.my.model.DayRota;
+import org.my.util.ParseUtil;
+import org.my.util.StaticVars;
 
-import model.DayRota;
-import service.RotaService;
-import util.ParseUtil;
-import util.StaticVars;
+import com.gargoylesoftware.htmlunit.html.HtmlPage;
 
 public class App {
 
-	public static void main(String[] args) {
+	public static ArrayList<DayRota> mainN() {
 		
-		StaticVars.RATE = getRate(10.0);
+		StaticVars.RATE = getRate(7.05);
 
 //		double[] a = { 11, 23, 9, 14.5, 9, 18.5, 9, 20.5, 9, 15, 9, 16, 9, 22, 9, 16, 8, 16, 9, 18, 8, 22, 9, 22, 9, 14, 8, 22, 12, 17, 9, 22, 10, 15, 9, 16, 9, 18 };
 //		double[] start = new double[a.length / 2];
@@ -47,6 +46,8 @@ public class App {
 //		double monthSalary = getSalary(start, end);
 //		System.out.println("MONTH: £" + (monthSalary+monthSalary*0.2));
 //		System.out.println("MONTH after taxes: £" + monthSalary);
+		
+		return rotaList;
 
 	}
 

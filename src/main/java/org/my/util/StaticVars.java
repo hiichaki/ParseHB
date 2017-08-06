@@ -1,4 +1,4 @@
-package util;
+package org.my.util;
 
 public class StaticVars {
 	

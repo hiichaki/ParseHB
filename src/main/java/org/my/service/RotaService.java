@@ -1,8 +1,8 @@
-package service;
+package org.my.service;
 
 import java.util.ArrayList;
 
-import model.DayRota;
+import org.my.model.DayRota;
 
 public class RotaService {
 

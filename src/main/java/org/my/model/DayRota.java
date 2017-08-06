@@ -1,6 +1,8 @@
-package model;
+package org.my.model;
 
-import util.StaticVars;
+import java.beans.Transient;
+
+import org.my.util.StaticVars;
 
 public class DayRota {
 
@@ -46,6 +48,11 @@ public class DayRota {
 
 	public void setPayment(double payment) {
 		this.payment = payment;
+	}
+
+	@Transient
+	public double getBreak() {
+		return hours * 7;
 	}
 
 	@Override
