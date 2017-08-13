@@ -30,14 +30,14 @@
 					<tr>
 						<td class="col-md-2">${day.date}</td>
 						<td class="col-md-2">${day.place}</td>
-						<td class="col-md-1">${day.hours}</td>
-						<td class="col-md-1">${day.break}</td>
-						<td class="col-md-2">${day.payment}</td>
+						<td class="col-md-1">${day.hours} h</td>
+						<td class="col-md-1">${day.break} min</td>
+						<td class="col-md-2">£${day.payment}</td>
 					</tr>
 				</c:forEach>
 			</tbody>
 		</table>
-
+		<p>Total: £${total}</p>
 	</c:if>
 
 

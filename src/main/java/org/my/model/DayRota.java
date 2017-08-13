@@ -1,6 +1,8 @@
 package org.my.model;
 
 import java.beans.Transient;
+import java.text.DecimalFormat;
+import java.text.NumberFormat;
 
 import org.my.util.StaticVars;
 
@@ -16,6 +18,9 @@ public class DayRota {
 		this.place = place;
 		this.hours = hours;
 		this.payment = hours * StaticVars.RATE;
+		int tmp = (int) (this.payment * 100.0);
+		this.payment = ((double) tmp) / 100.0;
+
 	}
 
 	public String getDate() {
@@ -57,7 +62,8 @@ public class DayRota {
 
 	@Override
 	public String toString() {
-		return date + ", " + place + ", " + hours + "h, £" + payment;
+		NumberFormat formatter = new DecimalFormat("#0.00");
+		return date + ", " + place + ", " + hours + "h, £" + formatter.format(payment);
 	}
 
 }

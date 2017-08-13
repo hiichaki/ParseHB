@@ -50,6 +50,24 @@ public class App {
 		return rotaList;
 
 	}
+	
+	public static ArrayList<DayRota> getRota(String email, String rate) {
+		StaticVars.RATE = getRate(Double.parseDouble(rate));
+		
+		HtmlPage homePage = ParseUtil.submitForm(email);
+		
+		int userId = ParseUtil.getIdByEmail(homePage, email);
+		
+		HtmlPage page = ParseUtil.getRotaPage(userId);
+
+		ArrayList<DayRota> rotaList = ParseUtil.getDayRota(page);
+
+		RotaService.showRota(rotaList);
+
+		RotaService.showPayment(rotaList);
+		
+		return rotaList;
+	}
 
 	private static double getRate(double rate) {
 		return rate / 100 * 80;
