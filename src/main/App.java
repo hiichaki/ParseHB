@@ -1,5 +1,7 @@
 package main;
 
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 
 import com.gargoylesoftware.htmlunit.html.HtmlPage;
@@ -10,10 +12,18 @@ import util.ParseUtil;
 import util.StaticVars;
 
 public class App {
-
+	
 	public static void main(String[] args) {
+
+//		try {
+//			Process p =Runtime.getRuntime().exec("chcp 1252");
+//			p.waitFor();
+//		} catch (IOException | InterruptedException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 		
-		StaticVars.RATE = getRate(10.0);
+		StaticVars.RATE = getRate(7.75);
 
 //		double[] a = { 11, 23, 9, 14.5, 9, 18.5, 9, 20.5, 9, 15, 9, 16, 9, 22, 9, 16, 8, 16, 9, 18, 8, 22, 9, 22, 9, 14, 8, 22, 12, 17, 9, 22, 10, 15, 9, 16, 9, 18 };
 //		double[] start = new double[a.length / 2];
@@ -42,7 +52,17 @@ public class App {
 
 		RotaService.showRota(rotaList);
 
+//		System.out.println("7.05");
+//		RotaService.showRota(rotaList);
 		RotaService.showPayment(rotaList);
+		
+//		StaticVars.RATE = getRate(7.5);
+//		RotaService.showRota(ParseUtil.getDayRota(page));
+//		RotaService.showPayment(ParseUtil.getDayRota(page));
+//		
+//		StaticVars.RATE = getRate(7.75);
+//		RotaService.showRota(ParseUtil.getDayRota(page));
+//		RotaService.showPayment(ParseUtil.getDayRota(page));
 		
 //		double monthSalary = getSalary(start, end);
 //		System.out.println("MONTH: £" + (monthSalary+monthSalary*0.2));
