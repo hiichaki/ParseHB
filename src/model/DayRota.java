@@ -11,9 +11,10 @@ public class DayRota {
 
 	public DayRota(String date, String place, double hours) {
 		this.date = date;
-		this.place = place;
+		this.place = place.replaceAll("[0-9]", "").trim();
 		this.hours = hours;
-		this.payment = hours * StaticVars.RATE;
+		int tmp = (int) (hours * StaticVars.RATE * 100);
+		this.payment = tmp / 100.00;
 	}
 
 	public String getDate() {
@@ -50,7 +51,7 @@ public class DayRota {
 
 	@Override
 	public String toString() {
-		return date + ", " + place + ", " + hours + "h, £" + payment;
+		return date + ", " + place + ", " + hours + "h, " + "\u00A34" + +payment;
 	}
 
 }
