@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.logging.Level;
 
 import com.gargoylesoftware.htmlunit.BrowserVersion;
 import com.gargoylesoftware.htmlunit.FailingHttpStatusCodeException;
@@ -31,6 +32,9 @@ public class ParseUtil {
 
 	public static void submitForm() {
 		try {
+			
+			java.util.logging.Logger.getLogger("com.gargoylesoftware").setLevel(Level.OFF); 
+			java.util.logging.Logger.getLogger("org.apache.commons.httpclient").setLevel(Level.OFF);
 			
 			WEB_CLIENT.getOptions().setThrowExceptionOnFailingStatusCode(false);
 			WEB_CLIENT.getOptions().setThrowExceptionOnScriptError(false);
