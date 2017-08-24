@@ -73,41 +73,41 @@ public class ParseUtil {
 		return null;
 	}
 	
-	public static HtmlPage getRotaPage(int monthF, int dayF,int yearF,int monthT, int dayT,int yearT) {
+	public static HtmlPage getRotaPage(int q) {
 		try {
 			final HtmlPage page = WEB_CLIENT.getPage(StaticVars.ROTA_URL);
-			List<HtmlOption> options;
 			
 			HtmlSelect monthFrom = (HtmlSelect) page.getElementById("view_from_Month_ID");
-			options = monthFrom.getOptions();
-		    monthFrom.setSelectedAttribute(options.get(2), true);
-		    options.forEach(opt -> System.out.println(opt.asXml()));
+			HtmlOption option = monthFrom.getOptionByValue("7");
+		    monthFrom.setSelectedAttribute(option, true);
 		    
 		    HtmlSelect dayFrom = (HtmlSelect) page.getElementById("view_from_Day_ID");
-		    options = dayFrom.getOptions();
-		    dayFrom.setSelectedAttribute(options.get(0), true);
+		    option = dayFrom.getOptionByValue("1");
+		    dayFrom.setSelectedAttribute(option, true);
 		    
 		    HtmlTextInput yearFrom = (HtmlTextInput) page.getElementById("view_from_Year_ID");
 		    yearFrom.setValueAttribute("2017");
 		    
 		    
 		    HtmlSelect monthTo = (HtmlSelect) page.getElementById("view_to_Month_ID");
-		    options = monthTo.getOptions();
-		    monthTo.setSelectedAttribute(options.get(0), true);
+		    option = monthTo.getOptionByValue("7");
+		    monthTo.setSelectedAttribute(option, true);
 		    
 		    HtmlSelect dayTo = (HtmlSelect) page.getElementById("view_to_Day_ID");
-		    options = dayTo.getOptions();
-		    dayTo.setSelectedAttribute(options.get(0), true);
+		    option = dayTo.getOptionByValue("31");
+		    dayTo.setSelectedAttribute(option, true);
 		    
 		    HtmlTextInput yearTo = (HtmlTextInput) page.getElementById("view_to_Year_ID");
 		    yearTo.setValueAttribute("2017");
 		    
 		    
 		    
-			final HtmlInput button = (HtmlInput) page.getByXPath("/html/body/form/input").get(0);
+			final HtmlInput button = (HtmlInput) page.getByXPath("/html/body/form/table/tbody/tr/td/input").get(2);
+			System.out.println(button.asXml());
 			
 			
-			return button.click();
+			HtmlPage returnPage = button.click();
+			return returnPage;
 			
 		} catch (FailingHttpStatusCodeException | IOException e) {
 			e.printStackTrace();

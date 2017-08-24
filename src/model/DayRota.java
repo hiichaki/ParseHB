@@ -51,7 +51,7 @@ public class DayRota {
 
 	@Override
 	public String toString() {
-		return date + ", " + place + ", " + hours + "h, " + "\u00A34" + +payment;
+		return date + ", " + place + ", " + hours + "h, " +"\u00A3" + payment;
 	}
 
 }

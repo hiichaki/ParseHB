@@ -15,7 +15,7 @@ public class RotaService {
 	}
 
 	public static void showPayment(ArrayList<DayRota> rotaList) {
-		System.out.println("£" + RotaService.getPayment(rotaList));
+		System.out.println("\u00A3" + RotaService.getPayment(rotaList));
 	}
 	
 	public static void showRota(ArrayList<DayRota> rotaList) {
