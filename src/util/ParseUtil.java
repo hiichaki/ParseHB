@@ -100,11 +100,7 @@ public class ParseUtil {
 		    HtmlTextInput yearTo = (HtmlTextInput) page.getElementById("view_to_Year_ID");
 		    yearTo.setValueAttribute("2017");
 		    
-		    
-		    
 			final HtmlInput button = (HtmlInput) page.getByXPath("/html/body/form/table/tbody/tr/td/input").get(2);
-			System.out.println(button.asXml());
-			
 			
 			HtmlPage returnPage = button.click();
 			return returnPage;
