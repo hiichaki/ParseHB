@@ -56,9 +56,9 @@ public class App {
 		
 		HtmlPage homePage = ParseUtil.submitForm(email);
 		
-		int userId = ParseUtil.getIdByEmail(homePage, email);
+//		int userId = ParseUtil.getIdByEmail(homePage, email);
 		
-		HtmlPage page = ParseUtil.getRotaPage(userId);
+		HtmlPage page = ParseUtil.getRotaPage(1,1);
 
 		ArrayList<DayRota> rotaList = ParseUtil.getDayRota(page);
 
