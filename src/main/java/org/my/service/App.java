@@ -12,7 +12,7 @@ public class App {
 
 	public static ArrayList<DayRota> mainN() {
 		
-		StaticVars.RATE = getRate(7.05);
+		StaticVars.RATE = getRate(7.5);
 
 //		double[] a = { 11, 23, 9, 14.5, 9, 18.5, 9, 20.5, 9, 15, 9, 16, 9, 22, 9, 16, 8, 16, 9, 18, 8, 22, 9, 22, 9, 14, 8, 22, 12, 17, 9, 22, 10, 15, 9, 16, 9, 18 };
 //		double[] start = new double[a.length / 2];

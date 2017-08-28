@@ -15,7 +15,7 @@ public class DayRota {
 
 	public DayRota(String date, String place, double hours) {
 		this.date = date;
-		this.place = place;
+		this.place = place.replaceAll("[0-9]", "").trim();
 		this.hours = hours;
 		this.payment = hours * StaticVars.RATE;
 		int tmp = (int) (this.payment * 100.0);
