@@ -1,5 +1,6 @@
 package model;
 
+import util.FormatUtil;
 import util.StaticVars;
 
 public class DayRota {
@@ -13,8 +14,7 @@ public class DayRota {
 		this.date = date;
 		this.place = place.replaceAll("[0-9]", "").trim();
 		this.hours = hours;
-		int tmp = (int) (hours * StaticVars.RATE * 100);
-		this.payment = tmp / 100.00;
+		this.payment = FormatUtil.format(hours * StaticVars.RATE);
 	}
 
 	public String getDate() {
@@ -51,7 +51,7 @@ public class DayRota {
 
 	@Override
 	public String toString() {
-		return date + ", " + place + ", " + hours + "h, " +"\u00A3" + payment;
+		return date + ", " + place + ", " + hours + "h, " + "\u00A3" + payment;
 	}
 
 }

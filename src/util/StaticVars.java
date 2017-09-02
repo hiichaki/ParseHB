@@ -9,6 +9,8 @@ public class StaticVars {
 	
 	public static String ROTA_URL = "https://hbros.co.uk/rota/employees/submit.php?idemployeeview=528";
 	
-	public static double RATE = 5.64;
+	public static double RATE;
+	
+	public static String CURRENT_YEAR = "2017";
 
 }
